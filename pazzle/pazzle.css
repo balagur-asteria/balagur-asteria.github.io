@@ -5,8 +5,9 @@ body{
 }
 #nik{
     position: fixed;
+    background: url("./img/bg.jpg");
     background-size: cover;
-    background: url("./img/bg.jpg") no-repeat;
+    background-repeat: no-repeat;
     z-index: 100;
     top: 0;
     left: 0;
