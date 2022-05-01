@@ -51,6 +51,22 @@ button{
     border-radius: 5px;
     padding: 5px 15px;
 }
+.start button.hidden, .start .timer.hidden{
+    display: none;
+}
+
+.start .timer{
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+.start .timer span{
+    background-color: #aa0101 ;
+    color: #fff;
+    text-transform: lowercase;
+    text-align: center;
+    padding: 5px 10px;
+}
 
 .quiz .title,.result .title{
     font-weight: 600;
