@@ -56,7 +56,7 @@
     ]
 
     const answers = [];
-    const timeToStart = 'Sun May 01 2022 12:46:00 GMT+0300';
+    const timeToStart = 'Sun May 01 2022 18:00:00 GMT+0300';
 
     const getTimeRemaining = endTimeString=>{
         const t = Date.parse(endTimeString) - Date.parse(new Date());
