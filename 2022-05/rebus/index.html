@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="start">
+        <h1>Приветствую тебя воин!</h1>
+        <div id="user_name"><p>Укажи игровой НИК (это важно):</p> <input type="text" ></div>
+
+        <button>Начать</button>
+        <div class="timer hidden">
+            Конкурс стартует через <span></span>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="quiz hidden">
+        <div id="counter">
+            <div id="current"></div>
+            /
+            <div id="max"></div>
+        </div>
+        <h2 class="title"></h2>
+        <div class="task">
+            <img src="" alt="">
+        </div>
+        <div class="answer">
+            <input type="text" data-answer="" placeholder="Ответ">
+            <button>Ok</button>
+        </div>
+    </div>
+
+    <div class="result hidden">
+        <h2 class="title">
+            Скопируйте результат.
+            <br>
+            И отправьте в качестве ответа на задание.</h2>
+        <div class="data"></div>
+    </div>
+
+    <script src="./md5.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
