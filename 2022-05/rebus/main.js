@@ -205,7 +205,7 @@
     }
 
     const setTimer = timeInfo=>{
-        start.querySelector('.timer span').innerText = `${timeInfo.hours}ч : ${timeInfo.minutes}м : ${timeInfo.seconds}c`;
+        start.querySelector('.timer span').innerText = `${timeInfo.days} дней ${timeInfo.hours}ч : ${timeInfo.minutes}м : ${timeInfo.seconds}c`;
     };
 
     const sleep = async seconds=>new Promise(resolve => setTimeout(()=>resolve(true),seconds*1000));
