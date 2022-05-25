@@ -1,0 +1,88 @@
+body{
+    background: url("./img/bg-logo5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#nik{
+    position: fixed;
+    background: url("./img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#nik.hidden{
+    display: none;
+}
+#nik input{
+    margin: 20px 0;
+    padding: 2px 8px;
+    text-align: center;
+}
+#nik input.error{
+    border-color: #ff0000;
+}
+#nik .title{
+    font-family: Tahoma;
+    color: #ffb74c;
+    font-weight: bold;
+}
+#nik .title.hidden~input,
+#nik .title.hidden~button#startGame,
+#nik .title.hidden{
+    display: none;
+}
+#nik #startGame{
+    display: inline-block;
+    height: 26px;
+    padding: 0 0 0 25px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    background: url('./img/red-5.png') 0 0 no-repeat;
+}
+#nik #startGame:hover{
+    background-position: 0 -52px;
+}
+#nik #startGame:hover span{
+    background-position: 100% -78px;
+}
+#nik #startGame span{
+    display: block;
+    width: 80px;
+    height: 26px;
+    padding: 0 25px 0 0;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    text-shadow: 0 0 5px rgb(0 0 0 / 50%), 0 0 3px rgb(0 0 0 / 50%), 0 0 3px rgb(0 0 0 / 50%);
+    color: #ffa533;
+    background: url('./img/red-5.png') 100% -26px no-repeat;
+}
+#game{
+}
+#game.hidden{
+    display: none;
+}
+#game #nikTitle{
+    text-align: center;
+    color: #5e3d29;
+    font-weight: bold;
+}
+
+#nik .timer{
+    font-family: tahoma;
+    color: #ffb74c;
+    font-weight: bold;
+}
+#nik .timer.hidden{
+    display: none;
+}
