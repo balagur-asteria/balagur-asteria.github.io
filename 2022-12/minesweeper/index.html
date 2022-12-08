@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./minesweeper.css">
+</head>
+<body>
+    <div class="start ">
+        <div class="hello hidden">
+            <h1>Приветствую тебя воин!</h1>
+            <div id="user_name"><p>Укажи игровой НИК (это важно):</p> <input type="text" ></div>
+
+            <button>Начать</button>
+        </div>
+        <div class="timer hidden">
+            Конкурс стартует через <span></span>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="quiz hidden">
+        <div class="col-left">
+            <div class="settings">
+                <label for="boardSize">Размер поля:</label>
+                <input id="boardSize" type="range" value="30" min="20" max="100">
+                <!--
+                    <label for="tileSize">tile size</label>
+                    <input id="tileSize" type="range" min="10" max="100" step="10">
+                -->
+            </div>
+        </div>
+        <div class="col-right">
+            <a href="#!" class="minesweeper-btn">Новая игра</a>
+            <div class="bombs">
+                Выбрано: <san class="selected">0</san> из <span class="all"></span>
+            </div>
+        </div>
+        <div class="board-wrap">
+            <div class="board"></div>
+        </div>
+        <div class="endscreen"></div>
+    </div>
+
+    <div class="result hidden">
+        <h2 class="title">
+            Скопируйте результат.
+            <br>
+            И отправьте в качестве ответа на задание.</h2>
+        <div class="data"></div>
+    </div>
+
+    <script src="./md5.js"></script>
+    <script src="./main.js?ver=2"></script>
+</body>
+</html>
