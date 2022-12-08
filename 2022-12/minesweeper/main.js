@@ -9,8 +9,7 @@
     const quizInput = quiz.querySelector('.answer input');
     const quizResult = document.querySelector('.result');
 
-    // const timeToStart = 'Sat Dec 10 2022 9:00:00 GMT+0300';
-    const timeToStart = 'Thu Dec 08 2022 18:35:53 GMT+0300';
+    const timeToStart = 'Sat Dec 10 2022 9:00:00 GMT+0300';
 
     const getTimeRemaining = endTimeString=>{
         const t = Date.parse(endTimeString) - Date.parse(new Date());
@@ -115,7 +114,7 @@
     /*===========================================*/
 
     function startMinesweeper(){
-        let size = 5;
+        let size = 20;
         let bombFrequency = 0.2;
         let tileSize = 30;
 
@@ -212,6 +211,7 @@
             });
 
             bombsCounter.querySelector('.all').innerHTML = bombs.length;
+            bombsCounter.querySelector('.selected').innerHTML = 0;
         }
 
         const countFlags = ()=>{
