@@ -50,13 +50,14 @@
             }));
     }
 
-    function printResult({bombsAll,bombsSelected}){
+    function printResult({bombsAll,bombsSelected,time}){
         const result = quizResult.querySelector('.data');
         const resultInfo = {
             nikName: nikName,
             hash: MD5(nikName),
             bombsAll,
-            bombsSelected
+            bombsSelected,
+            time
         };
         let b64Result = b64EncodeUnicode(JSON.stringify(resultInfo));
         b64Result = b64Result.replace(/=/g,'');
@@ -117,6 +118,8 @@
         let size = 20;
         let bombFrequency = 0.2;
         let tileSize = 30;
+
+        let startTime = 0;
 
         const board = document.querySelectorAll('.board')[0];
         let tiles;
@@ -212,6 +215,7 @@
 
             bombsCounter.querySelector('.all').innerHTML = bombs.length;
             bombsCounter.querySelector('.selected').innerHTML = 0;
+            startTime = Date.now();
         }
 
         const countFlags = ()=>{
@@ -331,7 +335,8 @@
                 gameOver = true;
                 printResult({
                     bombsAll:bombs.length,
-                    bombsSelected: Array.from(tiles).filter(tile=>tile.classList.contains('tile--flagged')).length
+                    bombsSelected: Array.from(tiles).filter(tile=>tile.classList.contains('tile--flagged')).length,
+                    time:Date.now()-startTime
                 });
             }
         }
