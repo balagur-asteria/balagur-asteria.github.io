@@ -78,6 +78,12 @@ body{
     font-weight: bold;
 }
 
+#game #nikTitle img{
+    width: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
 #nik .timer{
     font-family: tahoma;
     color: #ffb74c;

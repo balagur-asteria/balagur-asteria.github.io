@@ -4,7 +4,7 @@ const timeToStart = 'Thu Jun 21 2023 15:00:00 GMT+0300';
 
 
 const startGame = userName=>{
-    const nikTitle = document.querySelector('#nikTitle');
+    const nikTitle = document.querySelector('#nikTitle span');
     nikTitle.innerHTML =userName;
 
     const registerBlock = document.querySelector('#nik');
@@ -16,6 +16,13 @@ const startGame = userName=>{
 
     registerBlock.classList.add('hidden');
     gameBlock.classList.remove('hidden');
+
+    const clearNick = document.querySelector('#nikTitle img');
+    clearNick.addEventListener('click',async ()=>{
+        clearFirstLoad();
+        window.location.reload();
+    })
+
 }
 
 const getUserName = ()=>{
@@ -25,7 +32,7 @@ const clearUserName = ()=>{
     localStorage.asteriaNik = '';
 }
 const checkFirstLoaded = ()=>{
-    return !localStorage.firstLoad;
+    return localStorage.firstLoad==0;
 }
 const setUserName = nikName=>{
     return localStorage.asteriaNik = nikName;
@@ -33,6 +40,10 @@ const setUserName = nikName=>{
 
 const setFirstLoad = ()=>{
     return localStorage.firstLoad = 1;
+}
+
+const clearFirstLoad = ()=>{
+    localStorage.firstLoad = 0;
 }
 
 const toggleErrorNik = ({nikInput,isError})=>{
