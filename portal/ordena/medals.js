@@ -185,7 +185,7 @@ var medal_info = {
         "picture": "newor_d_1.jpg"
     }
 };
-
+console.log('++medal++');
 var toppe = _top();
 
 var cur_medal_id = 0;
