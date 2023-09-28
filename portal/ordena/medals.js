@@ -212,12 +212,13 @@ function medal_alt(medal_id, m_event, evnt) {
         var ey;
 
         ex = m_event.clientX + document.body.scrollLeft;
-        ey = m_event.clientY + document.body.scrollTop;
+        ey = m_event.pageY;
+        // console.log({m_event})
+        // console.log({ex,ey})
 
         var x = ex + alt_div.offsetWidth > document.body.clientWidth - 20 ? ex - alt_div.offsetWidth - 10 : ex + 10;
-        var y = ey + alt_div.offsetHeight - document.body.scrollTop > document.body.clientHeight - 20 ? ey - alt_div.offsetHeight - 10 : ey + 10;
-
-        
+        var y = ey + alt_div.offsetHeight - m_event.pageY > document.body.clientHeight - 20 ? ey - alt_div.offsetHeight - 10 : ey + 10;
+        // console.log({x,y})
         if (x < 0) {
             x = ex - alt_div.offsetWidth / 2;
         }
