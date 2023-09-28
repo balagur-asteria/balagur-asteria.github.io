@@ -185,72 +185,10 @@ var medal_info = {
         "picture": "newor_d_1.jpg"
     }
 };
-console.log('++medal++');
+
 var toppe = _top();
 
 var cur_medal_id = 0;
-
-function medal_click(medal_id, obj) {
-
-    toppe.$('#medal_common_dat').html('');
-    toppe.$('#medal_common').html('');
-    toppe.$('#upgrade_medal_button').show();
-
-    var pos = $(obj).position();
-
-    toppe.$('#medal_title_info').html(medal_info[medal_id]['title']);
-
-    var coor = getIframeShift();
-
-    //toppe.$('#medal_update_info').css('left', pos['left'] + coor.left);
-    //toppe.$('#medal_update_info').css('top', pos['top'] + coor.top);
-
-    toppe.$('#medal_update_info').css('left', 'calc(50% - 200px)');
-    toppe.$('#medal_update_info').css('top', '2%');
-
-    $.ajax({
-        type: 'POST',
-        url: "medals.php?&mode=update&update_id=" + medal_id,
-        async: false,
-        success: function (data) {
-
-        },
-        complete: function (data) {
-            toppe.$('#medal_common').html(data.responseText);
-            cur_medal_id = medal_id;
-        },
-    });
-
-    toppe.$('#medal_update_info').show();
-}
-
-function medal_update() {
-    var update_cnt = toppe.$('#update_cnt').val();
-    $.ajax({
-        type: 'POST',
-        url: "medals.php?&action=update_medal&update_id=" + cur_medal_id + "&update_cnt=" + update_cnt,
-        async: false,
-        success: function (data) {
-
-        },
-        complete: function (data) {
-            toppe.$('#medal_common_dat').html(data.responseText);
-            if (data.responseText.length < 11) {
-                $.ajax({
-                    type: 'POST',
-                    url: "medals.php?&mode=update&update_id=" + cur_medal_id + "&update_cnt=" + update_cnt,
-                    async: false,
-                    success: function (data) {
-
-                    },
-                    complete: function (data) {
-                        toppe.$('#medal_common').html(data.responseText);
-                    },
-                });
-            }
-        },
-    });
-}
 
 function medal_alt(medal_id, m_event, evnt) {
     var alt_div = $('#medal_alt');
@@ -270,11 +208,12 @@ function medal_alt(medal_id, m_event, evnt) {
 
     if (evnt == 1) {
         var coor = getIframeShift();
-        var ex = m_event.clientX + coor.left;
-        var ey = m_event.clientY + coor.top;
+        var ex;
+        var ey;
 
         ex = m_event.clientX + document.body.scrollLeft;
         ey = m_event.clientY + document.body.scrollTop;
+        console.log({m_event})
 
         var x = ex + alt_div.offsetWidth > document.body.clientWidth - 20 ? ex - alt_div.offsetWidth - 10 : ex + 10;
         var y = ey + alt_div.offsetHeight - document.body.scrollTop > document.body.clientHeight - 20 ? ey - alt_div.offsetHeight - 10 : ey + 10;
